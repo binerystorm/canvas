@@ -9,6 +9,8 @@ from typing import Optional, Any, Final, Generator
 SLIDER_GRIP_SIZE: Final[int] = 8
 SLIDER_HEIGHT: Final[int] = 6
 
+# TODO: organize and clean up code
+# TODO: factor out or refactor brush class
 class Brush_c:
     def __init__(self, color: Color) -> None:
         self.active_b: bool = False
@@ -330,6 +332,7 @@ class Canvas_c(Static):
 
         return vec_list
 
+    # TODO: fix crash when mouse leaves canvas
     def handle_events(self, event_list: list[pg.event.Event]) -> None:
         mouse_pos: Vec2 = Vec2(*pg.mouse.get_pos())
         if not (mouse_pos.x >= self.hit_box.width or mouse_pos.y >= self.hit_box.height
